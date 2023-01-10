@@ -1,0 +1,19 @@
+---
+- hosts: all
+  become: yes
+  become_user: root
+  tasks:
+    - name: Update and upgrade apt packages
+      apt:
+        upgrade: yes
+        update_cache: yes
+ 
+    - name: install JDK 11
+      apt:
+        name: openjdk-11-jdk
+        state: present
+
+    - name: install tomcat9
+      apt: name=tomcat9 state=present
+    - name: start tomcat service
+      service: name=tomcat9 state=started
