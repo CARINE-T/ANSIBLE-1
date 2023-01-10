@@ -1,0 +1,9 @@
+ansible -m ping all
+
+ansible all -a "df -h"
+
+ansible all -a "uptime"
+
+ansible all -m file -a "path=~/tmp-file state=touch"
+
+ansible all -m file -a "path=~/tmp-file state=absent"
