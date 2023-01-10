@@ -1,0 +1,12 @@
+-  hosts : all
+   become: true
+   name: playbook-install
+   tasks:
+     - name: install Packages
+       apt:
+           name: "{{ item }}"
+           state: latest
+       with_items:
+           - vim
+           - git
+           - curl
