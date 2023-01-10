@@ -1,0 +1,10 @@
+---
+
+-  hosts: all
+   become: true
+   name: playbook-to-install-apache
+   tasks:
+     - name: Install Apache
+       apt:
+           name: apache2
+           state: latest
